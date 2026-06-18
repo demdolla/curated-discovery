@@ -23,13 +23,13 @@ META_IG_USER_ID=replace_with_instagram_business_or_creator_user_id
 META_GRAPH_VERSION=v21.0
 ```
 
-Run locally through Vercel CLI:
+Run locally:
 
 ```bash
-vercel dev
+npm start
 ```
 
-The static UI can open directly in a browser, but API sync requires Vercel dev or a Vercel deployment.
+The local server serves the static UI and the same API route used by Vercel.
 
 ## Deploy
 

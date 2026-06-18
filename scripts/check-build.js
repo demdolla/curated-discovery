@@ -5,6 +5,7 @@ const requiredFiles = [
   "styles.css",
   "app.js",
   "api/instagram.js",
+  "scripts/dev-server.js",
   "vercel.json"
 ];
 
