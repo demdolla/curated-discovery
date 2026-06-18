@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Curated Discovery</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Curated discovery</p>
+          <h1>Useful scrolling, with an end.</h1>
+        </div>
+        <button class="icon-button" id="syncBtn" type="button" title="Sync recent posts" aria-label="Sync recent posts">
+          <span aria-hidden="true">S</span>
+        </button>
+      </header>
+
+      <section class="control-band" aria-label="Feed setup">
+        <form class="handle-form" id="handleForm">
+          <label for="handleInput">Instagram account</label>
+          <div class="input-row">
+            <input id="handleInput" type="text" autocomplete="off" placeholder="account_name">
+            <button type="submit">Add</button>
+          </div>
+        </form>
+
+        <label class="select-field" for="topicFilter">
+          <span>Topic</span>
+          <select id="topicFilter">
+            <option value="all">All useful posts</option>
+            <option value="health">Health</option>
+            <option value="money">Money</option>
+            <option value="relationships">Relationships</option>
+            <option value="cooking">Cooking</option>
+            <option value="sales">Sales</option>
+            <option value="mindset">Mindset</option>
+            <option value="learning">Learning</option>
+          </select>
+        </label>
+
+        <label class="select-field" for="batchSize">
+          <span>Batch</span>
+          <select id="batchSize">
+            <option value="10">10 cards</option>
+            <option value="20" selected>20 cards</option>
+            <option value="30">30 cards</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="account-strip" aria-label="Accounts">
+        <div>
+          <h2>Accounts</h2>
+          <p id="accountCount">No accounts yet.</p>
+        </div>
+        <div class="chips" id="accountList"></div>
+      </section>
+
+      <section class="status-panel" id="statusPanel" aria-live="polite">
+        Add accounts, then sync. If Meta credentials are not set, the app will show the setup state instead of pretending it worked.
+      </section>
+
+      <section class="feed-layout">
+        <section class="feed" id="feed" aria-label="Curated feed"></section>
+
+        <aside class="side-panel" aria-label="Saved cards">
+          <div class="side-header">
+            <h2>Saved</h2>
+            <button class="text-button" id="clearReadBtn" type="button">Reset read</button>
+          </div>
+          <div id="savedList" class="saved-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="feed-card">
+        <div class="card-meta">
+          <span class="source"></span>
+          <span class="topic"></span>
+        </div>
+        <h3></h3>
+        <p class="summary"></p>
+        <p class="caption"></p>
+        <div class="card-actions">
+          <button type="button" data-action="useful" title="Mark useful">Useful</button>
+          <button type="button" data-action="save" title="Save card">Save</button>
+          <button type="button" data-action="hide" title="Hide this account">Hide account</button>
+          <a target="_blank" rel="noopener noreferrer">Open source</a>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
