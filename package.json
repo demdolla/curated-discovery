@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node scripts/dev-server.js",
-    "build": "node scripts/check-build.js"
+    "build": "node scripts/check-build.js && node scripts/prepare-output.js"
   },
   "devDependencies": {}
 }
